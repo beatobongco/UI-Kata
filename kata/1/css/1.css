@@ -56,3 +56,7 @@ body {
 	font-size: 13.5px;
 	font-family: 'Open Sans', sans-serif;
 }
+
+#preload { 
+	background: url(../img/move.gif) no-repeat -9999px -9999px; 
+}
