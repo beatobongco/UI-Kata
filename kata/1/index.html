@@ -18,17 +18,24 @@
 
 	<p>Modifications: the .gif plays when you put your mouse over the card and stops on mouseout. I had a bit of trouble getting this to happen as onmouseout apparently triggers for all children of the element you assign it to.</p>
 	
-	<code><pre>
+<code><pre>
 	//this will log a random number when you mouseout on every single element inside .cleanrich-card
 
 	document.querySelector(".cleanrich-card").onmouseout = function() {
 		console.log(Math.random())
 	}
-	</pre></code>
+</pre></code>
 	
 	<p>Check out the last clean + rich card. If you open the developer console you can see what I mean.</p>
 	
 	<p>Eventually, I just went with overlaying the card with a link.</p>
+
+	<p>Also, a clean way of preload images via css is just putting it as an out-of-sight background on an element.</p>
+<code><pre>
+	#preload { 
+		background: url(../img/move.gif) no-repeat -9999px -9999px; 
+	}
+</pre></code>
 </div>
 <div class="kata">
 	<div id="preload"></div>
