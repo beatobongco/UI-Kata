@@ -1,9 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Kata #1: Clean + rich card - beatobongco.com</title>
+	<link href='https://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/1.css">
 </head>
 <body>
-I am 1
+<div class="header">
+	<h3>2016-5-9</h3>
+	<h1>Kata #1: Clean + rich card</h1>
+	<p>
+		Prompt: <a href="http://www.recode.net/">http://www.recode.net/</a>
+	</p>
+
+	<p>I like recode's simple and minimalist cards. I also like how they designed the fonts: huge titles, small sans-serif description, tiny but uppercase date and author and the use of the middot as a divider rather than |.</p>
+
+	<p>Modifications: the .gif plays when you put your mouse over the card and stops on mouseout. I had a bit of trouble getting this to happen as onmouseout apparently triggers for all children of the element you assign it to.</p>
+	
+	<code><pre>
+	//this will log a random number when you mouseout on every single element inside .cleanrich-card
+
+	document.querySelector(".cleanrich-card").onmouseout = function() {
+		console.log(Math.random())
+	}
+	</pre></code>
+	
+	<p>Check out the last clean + rich card. If you open the developer console you can see what I mean.</p>
+	
+	<p>Eventually, I just went with overlaying the card with a link.</p>
+</div>
+<div class="kata">
+	<div class="cleanrich-card">
+		<a class="moverlink" href="#"></a>
+		<img src="img/still.gif" data-still="img/still.gif" data-moving="img/move.gif"/>
+		<div class="info-container">
+			<h2 class="title" href="#">Bojack Horseman pleads not guilty to Quaalude charge</h2>
+			<p class="author">by Beato Bongco &middot; May 9, 2016, 12:01AM</p>
+			<p class="description">The 28-year old actor denies charges while saying he would like to push for its legalization. The Horsing Around star is also currently filing a patent for a new formula of horse tranquilizers</p>
+		</div>
+	</div>
+	<div class="cleanrich-card">
+		<a class="moverlink" href="#"></a>
+		<img src="img/still.gif" data-still="img/still.gif" data-moving="img/move.gif"/>
+		<div class="info-container">
+			<h2 class="title" href="#">Bojack Horseman pleads not guilty to Quaalude charge</h2>
+			<p class="author">by Beato Bongco &middot; May 9, 2016, 12:01AM</p>
+			<p class="description">The 28-year old actor denies charges while saying he would like to push for its legalization. The Horsing Around star is also currently filing a patent for a new formula of horse tranquilizers</p>
+		</div>
+	</div>
+	<div class="cleanrich-card special">
+		<img src="img/still.gif" data-still="img/still.gif" data-moving="img/move.gif"/>
+		<div class="info-container">
+			<h2 class="title" href="#">"I'm special" - Bojack Horseman</h2>
+			<p class="author">by Beato Bongco &middot; May 9, 2016, 12:01AM</p>
+			<p class="description">The 28-year old actor denies charges while saying he would like to push for its legalization. The Horsing Around star is also currently filing a patent for a new formula of horse tranquilizers</p>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var nodes = document.querySelectorAll(".cleanrich-card")
+	for (var i = 0; i < nodes.length; i++) {
+		var n = nodes[i].querySelector('.moverlink')
+		var imgNode = nodes[i].querySelector("img")
+		
+		if (!n) {
+			continue
+		}
+		
+		n.onmouseout = function(imgNode, e) {
+			imgNode.src = imgNode.getAttribute('data-still')	
+		}.bind(this, imgNode)
+
+		n.onmouseover = function(imgNode) {
+			if (imgNode.src !== imgNode.getAttribute('data-moving')) {
+				imgNode.src = imgNode.getAttribute('data-moving')
+			}
+		}.bind(this, imgNode)
+	}
+	document.querySelector(".cleanrich-card.special").onmouseout = function() {
+		console.log(Math.random())
+	}
+</script>
 </body>
 </html>
