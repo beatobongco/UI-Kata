@@ -23,7 +23,7 @@ pre {
 }
 
 .kata-container.regular {
-  width: 960px;
+  max-width: 960px;
   margin-top: 25px;
 }
 
