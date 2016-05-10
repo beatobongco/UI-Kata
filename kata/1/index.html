@@ -2,69 +2,95 @@
 <html>
 <head>
 	<title>Kata #1: Clean + rich card - beatobongco.com</title>
+	<link href='https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="../../common/kata.css">
 	<link rel="stylesheet" type="text/css" href="css/1.css">
 </head>
 <body>
-<div class="header">
-	<h3>2016-5-9</h3>
-	<h1>Kata #1: Clean + rich card</h1>
-	<p>
-		Prompt: <a href="http://www.recode.net/">http://www.recode.net/</a>
-	</p>
+<div class="kata-container centered regular">
+	<div class="header">
+		<h3>2016-5-9</h3>
+		<h1>Kata #1: Clean + rich card</h1>
+		<p>
+			Prompt: <a href="http://www.recode.net/">http://www.recode.net/</a>
+		</p>
+	</div>
 
-	<p>I like recode's simple and minimalist cards. I also like how they designed the fonts: huge titles, small sans-serif description, tiny but uppercase date and author and the use of the middot as a divider rather than |.</p>
+	<div class="article">
+		<p>I like recode's simple and minimalist cards. I also like how they designed the fonts: huge titles, small sans-serif description, tiny but uppercase date and author and the use of the middot as a divider rather than |.</p>
 
-	<p>Modifications: the .gif plays when you put your mouse over the card and stops on mouseout. I had a bit of trouble getting this to happen as onmouseout apparently triggers for all children of the element you assign it to.</p>
-	
-<code><pre>
+		<p>Modification: the .gif plays when you put your mouse over the card and stops on mouseout.</p>
+	</div>
+
+	<div class="kata">
+		<div id="preload"></div>
+		<div class="cleanrich-card">
+			<a class="moverlink" href="#"></a>
+			<img src="img/still.gif" data-still="img/still.gif" data-moving="img/move.gif"/>
+			<div class="info-container">
+				<h2 class="title" href="#">Bojack Horseman pleads not guilty to Quaalude charge</h2>
+				<p class="author">by Beato Bongco &middot; May 9, 2016, 12:01AM</p>
+				<p class="description">The 28-year old actor denies charges while saying he would like to push for its legalization. The Horsing Around star is also currently filing a patent for a new formula of horse tranquilizers</p>
+			</div>
+		</div>
+		<div class="cleanrich-card">
+			<a class="moverlink" href="#"></a>
+			<img src="img/still.gif" data-still="img/still.gif" data-moving="img/move.gif"/>
+			<div class="info-container">
+				<h2 class="title" href="#">Bojack Horseman pleads not guilty to Quaalude charge</h2>
+				<p class="author">by Beato Bongco &middot; May 9, 2016, 12:01AM</p>
+				<p class="description">The 28-year old actor denies charges while saying he would like to push for its legalization. The Horsing Around star is also currently filing a patent for a new formula of horse tranquilizers</p>
+			</div>
+		</div>
+		<div class="cleanrich-card">
+			<a class="moverlink" href="#"></a>
+			<img src="img/still.gif" data-still="img/still.gif" data-moving="img/move.gif"/>
+			<div class="info-container">
+				<h2 class="title" href="#">Bojack Horseman pleads not guilty to Quaalude charge</h2>
+				<p class="author">by Beato Bongco &middot; May 9, 2016, 12:01AM</p>
+				<p class="description">The 28-year old actor denies charges while saying he would like to push for its legalization. The Horsing Around star is also currently filing a patent for a new formula of horse tranquilizers</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="article">
+		<p>I had a bit of trouble getting this to happen as onmouseout apparently triggers for all children of the element you assign it to.</p>
+<pre>
+<code>
 	//this will log a random number when you mouseout on every single element inside .cleanrich-card
 
 	document.querySelector(".cleanrich-card").onmouseout = function() {
 		console.log(Math.random())
 	}
-</pre></code>
-	
-	<p>Check out the last clean + rich card. If you open the developer console you can see what I mean.</p>
-	
-	<p>Eventually, I just went with overlaying the card with a link.</p>
+</code>
+</pre>
+	<p>Check out the following clean + rich card. If you open the developer console (CTRL+SHIFT+J on Chrome) and hover around it you'll see what I mean.</p>
+	</div>
+	<div class="cleanrich-card special">
+			<img src="img/still.gif" data-still="img/still.gif" data-moving="img/move.gif"/>
+			<div class="info-container">
+				<h2 class="title" href="#">"I'm special" - Bojack Horseman</h2>
+				<p class="author">by Beato Bongco &middot; May 9, 2016, 12:01AM</p>
+				<p class="description">The 28-year old actor denies charges while saying he would like to push for its legalization. The Horsing Around star is also currently filing a patent for a new formula of horse tranquilizers</p>
+			</div>
+		</div>
+	<div class="article">	
+		<p>Eventually, I just went with overlaying the card with a link.</p>
 
-	<p>Also, a clean way of preload images via css is just putting it as an out-of-sight background on an element.</p>
-<code><pre>
+		<p>Also, there was a slight loading lag when hovering over the still image so I decided to preload it. A clean way of doing this just via css is just putting it as an out-of-sight background on an element.</p>
+<pre>
+<code>
 	#preload { 
 		background: url(../img/move.gif) no-repeat -9999px -9999px; 
 	}
-</pre></code>
+</code>
+</pre>
+	</div>
 </div>
-<div class="kata">
-	<div id="preload"></div>
-	<div class="cleanrich-card">
-		<a class="moverlink" href="#"></a>
-		<img src="img/still.gif" data-still="img/still.gif" data-moving="img/move.gif"/>
-		<div class="info-container">
-			<h2 class="title" href="#">Bojack Horseman pleads not guilty to Quaalude charge</h2>
-			<p class="author">by Beato Bongco &middot; May 9, 2016, 12:01AM</p>
-			<p class="description">The 28-year old actor denies charges while saying he would like to push for its legalization. The Horsing Around star is also currently filing a patent for a new formula of horse tranquilizers</p>
-		</div>
-	</div>
-	<div class="cleanrich-card">
-		<a class="moverlink" href="#"></a>
-		<img src="img/still.gif" data-still="img/still.gif" data-moving="img/move.gif"/>
-		<div class="info-container">
-			<h2 class="title" href="#">Bojack Horseman pleads not guilty to Quaalude charge</h2>
-			<p class="author">by Beato Bongco &middot; May 9, 2016, 12:01AM</p>
-			<p class="description">The 28-year old actor denies charges while saying he would like to push for its legalization. The Horsing Around star is also currently filing a patent for a new formula of horse tranquilizers</p>
-		</div>
-	</div>
-	<div class="cleanrich-card special">
-		<img src="img/still.gif" data-still="img/still.gif" data-moving="img/move.gif"/>
-		<div class="info-container">
-			<h2 class="title" href="#">"I'm special" - Bojack Horseman</h2>
-			<p class="author">by Beato Bongco &middot; May 9, 2016, 12:01AM</p>
-			<p class="description">The 28-year old actor denies charges while saying he would like to push for its legalization. The Horsing Around star is also currently filing a patent for a new formula of horse tranquilizers</p>
-		</div>
-	</div>
+<div class="footer">
+	Back to <a href="http://beatobongco.com/UI-Kata/">UI Kata</a>
 </div>
 <script type="text/javascript">
 	var nodes = document.querySelectorAll(".cleanrich-card")
