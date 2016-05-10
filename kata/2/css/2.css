@@ -81,3 +81,8 @@ button:hover {
 .attribution {
 	margin-bottom: 1rem;
 }
+
+.whitefill {
+	padding-top: 100px;
+	background-color: white;
+}
