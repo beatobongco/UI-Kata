@@ -1,0 +1,83 @@
+video {
+	position: fixed;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	opacity: .5;
+}
+
+body {
+	background-color: #000;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+.cliffr-container {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	text-align: center; 
+	font-family: 'Raleway', sans-serif;
+}
+
+.hero {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.hero h1 {
+	color: #fff;
+	font-weight: 200;
+	font-size: 6rem;
+	margin: 0;
+	margin-bottom: 3rem;
+}
+
+.hero h2 {
+	color: #fff;
+	font-weight: 200;
+	font-size: 1.5rem;
+	width: 500px;
+	margin: 0 auto;
+}
+
+.hero .icon {
+	width: 128px;
+	height: 128px;
+	background-image: url(../image/cliff.png);
+	margin: 0 auto;
+}
+
+button {
+	margin-top: 3.5rem;
+	cursor: pointer;
+	border: 3px solid white;
+	background-color: rgba(0,0,0,0);
+	color: white;
+	font-family: 'PT Sans', sans-serif;
+	text-transform: uppercase;
+	padding: 10px 25px;
+	border-radius: 5px;
+	font-size: 1rem;
+}
+
+button:hover {
+	border-color: #1e9bda;
+	color: #1e9bda;
+}
+
+.attribution,
+.attribution a {
+	color: #fff;
+}
+
+.attribution {
+	margin-bottom: 1rem;
+}

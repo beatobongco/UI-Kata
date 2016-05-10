@@ -39,14 +39,14 @@ pre {
   color: #555;
 }
 
-h1 {
+.kata-container h1 {
   font-size: 4rem;
   font-weight: 300;
   color: #e74c3c;
   margin: 0;
 }
 
-a {
+.kata-container a {
   color: #e74c3c;
   text-decoration: none;
 }
