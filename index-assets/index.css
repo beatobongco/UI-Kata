@@ -28,7 +28,7 @@ h1:before {
 	opacity: .2;
 	background-image: url(kaizen.png);
 	background-repeat: no-repeat;
-	background-position: 100% 100%;
+	background-position: 100% 0;
 }
 
 .header {
