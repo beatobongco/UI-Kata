@@ -60,7 +60,8 @@
 		<p>I had a bit of trouble getting this to happen as onmouseout apparently triggers for all children of the element you assign it to.</p>
 <pre>
 <code>
-	//this will log a random number when you mouseout on every single element inside .cleanrich-card
+	// this will log a random number when you mouseout on 
+	// every single element inside .cleanrich-card
 
 	document.querySelector(".cleanrich-card").onmouseout = function() {
 		console.log(Math.random())
