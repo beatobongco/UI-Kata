@@ -1,0 +1,91 @@
+.flinto-banner {
+	width: 50%;
+	border: 2px solid #E1E4E7;
+  border-radius: 3px;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+}
+
+.flinto-banner p {
+	width: 80%;
+	margin: 0 auto;
+	font-size: 1rem;
+	line-height: 1.4rem;
+}
+
+.flinto-banner video {
+	margin-top: 20px;
+	max-width: 100%;
+}
+
+.flinto-banner h3 {
+	font-family: 'Oxygen', sans-serif;
+	font-weight: 700;
+	font-size: 2.5rem;
+	margin: 1rem 0;
+}
+
+.flinto-banner h3 span {
+	font-weight: 300;
+}
+
+.flinto-banner.pro span,
+.flinto-banner.pro a {
+	color: #FF6759;
+}
+
+.flinto-banner.lite span,
+.flinto-banner.lite a {
+	color: #40AFFF;
+}
+
+.flinto-banner:first-child {
+	margin-right: 15px;
+}
+
+.flinto-banner .learn-more {
+	display: block;
+	margin-top: 1rem;
+}
+
+.flinto-banner a:hover {
+	text-decoration: underline;
+}
+
+.banners {
+	display: flex;
+}
+
+button {
+	background: none;
+	border: 0;
+	border-radius: 3px;
+	font-size: 1.1rem;
+	padding: 7px 10px;
+	margin: 20px 0;
+	cursor: pointer;
+	font-family: 'Oxygen', sans-serif;
+	font-weight: 700;
+}
+
+button:hover {
+	opacity: .85;
+}
+
+.lite-btn {
+	margin-right: 10px;
+	color: #FF6759;
+  box-shadow: 0 0 0 2px #FF6759 inset;
+  width: 40%;
+}
+
+.main-btn {
+	color: #fff;
+	background-color: #FF6759;
+	width: 40%;
+}
+
+.blue-button {
+	color: #FFF;
+	background-color: #40AFFF;
+}
