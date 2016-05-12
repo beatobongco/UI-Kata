@@ -1,6 +1,6 @@
 .flinto-banner {
 	width: 335px;
-	margin-bottom: 20px;
+	margin:0 5px 20px;
 	border: 2px solid #E1E4E7;
   border-radius: 3px;
   font-family: 'Source Sans Pro', sans-serif;
@@ -40,10 +40,6 @@
 .flinto-banner.lite span,
 .flinto-banner.lite a {
 	color: #40AFFF;
-}
-
-.flinto-banner:first-child {
-	margin-right: 20px;
 }
 
 .flinto-banner .learn-more {
