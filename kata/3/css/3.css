@@ -87,6 +87,9 @@ button:hover {
 	color: #fff;
 	background-color: #FF6759;
 	width: 40%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 .blue-button {
