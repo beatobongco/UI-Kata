@@ -5,6 +5,10 @@
   color: #555;
 }
 
+img {
+  max-width: 100%;
+}
+
 .article p {
   font-size: 1.2rem;
 }
@@ -25,7 +29,7 @@ pre {
 
 .kata-container.regular {
   max-width: 700px;
-  margin-top: 25px;
+  margin: 25px 5% 0;
 }
 
 .footer {
