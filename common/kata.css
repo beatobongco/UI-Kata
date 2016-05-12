@@ -20,6 +20,7 @@ pre {
   font-size: 1rem;
   line-height: 1.3rem;
   overflow: auto;
+  padding: 0 10px;
 }
 
 .kata-container.centered {
