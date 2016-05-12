@@ -57,3 +57,7 @@ pre {
   color: #e74c3c;
   text-decoration: none;
 }
+
+.kata {
+  overflow: auto;
+}
