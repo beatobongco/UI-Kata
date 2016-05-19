@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Kata #4: Data brochure</title>
+	<title>Kata #4: Insync data brochure</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400' rel='stylesheet' type='text/css'>
@@ -11,82 +11,10 @@
 	<link rel="stylesheet" type="text/css" href="css/4.css">
 </head>
 <body>
-	<div class="free-insync">
-		<div class="fi-container darker center">
-			<h1>Free Insync Promo May 2016</h1>
-		</div>
-		<div class="fi-container dark center">
-			<div>
-				<div class="big-percent" id="engagement"></div>
-				<p>engagement</p>
-			</div>
-		</div>
-		<div class="slash-container light-top">
-			<div class="underlay u-bottom"></div>
-			<div class="fullflex top">
-				<div>
-					<p id="redeemers-whole"></p>
-					<div class="big-percent left" id="redeemers"></div>
-				</div>
-			</div>
-			<div class="fullflex bottom">
-				<div>
-					<div class="big-percent" id="emails"></div>
-					<p>emails sent</p>
-				</div>
-			</div>
-		</div>
-		<div class="fi-container dark center">
-			<div class="big-percent" id="existing"></div>
-			<p id="existing-whole"></p>
-		</div>
-		<div class="slash-container dark-top">
-			<div class="underlay u-top"></div>
-			<div class="fullflex top">
-				<div>
-					<div class="big-percent" id="installed"></div>
-					<p id="installed-number"></p>
-				</div>
-			</div>
-			<div class="fullflex bottom">
-				<div>
-					<p id="downloaded-number"></p>
-					<div class="big-percent left" id="downloaded"></div>
-				</div>
-			</div>
-		</div>
-		<div class="fi-container dark center">
-			<h3>Are they trying? Buying?</h3>
-		</div>
-
-		<div class="fi-container tb-container">
-			<canvas id="trial-buy"></canvas>
-		</div>
-
-		<div class="fi-container plan-container nopad">
-			<div class="canvas-block left">
-				<h3>Trialled</h3>
-				<canvas id="trialled"></canvas>
-			</div>
-			<div class="canvas-block right">
-				<h3>Bought</h3>
-				<canvas id="bought"></canvas>
-			</div>
-		</div>
-
-		<div class="fi-container darker center">
-			<h3>Top 10 Channels</h3>
-		</div>
-
-		<div class="fi-container channels-container padbot">
-			<div class="channels" id="top-ten"></div>
-		</div>
-		
-	</div>
 	<div class="kata-container centered regular">
 		<div class="header">
 			<h3>2016-5-18</h3>
-			<h1>Kata #4: Data brochure</h1>
+			<h1>Kata #4: Insync data brochure</h1>
 			<p>
 				Prompts: <a href="https://css-tricks.com/snippets/css/css-triangle/">CSS Tricks</a>, <a href="http://www.chartjs.org/">Chart.js</a>
 			</p>
@@ -95,9 +23,83 @@
 			<p>So we at <a href="https://insyncq.com">Insync</a> decided to make our app <a href="https://insynchq.com/free">free for 72 hours</a> as an experiment and as a thank you (&#10084;) to our customers. :)</p>
 			<p>It's a given that with experiments like these you really want to track data that may give you insights on how to improve your product, service or business strategy.</p>
 			<p>So I thought if I was to make a report anyway, why not have fun with it? And so this colorful b*tard was born!</p>
+		</div>
+		<div class="free-insync">
+			<div class="fi-container darker center">
+				<h1>Free Insync Promo May 2016</h1>
+			</div>
+			<div class="fi-container dark center">
+				<div>
+					<div class="big-percent" id="engagement"></div>
+					<p>engagement</p>
+				</div>
+			</div>
+			<div class="slash-container light-top">
+				<div class="underlay u-bottom"></div>
+				<div class="fullflex top">
+					<div>
+						<p id="redeemers-whole"></p>
+						<div class="big-percent left" id="redeemers"></div>
+					</div>
+				</div>
+				<div class="fullflex bottom">
+					<div>
+						<div class="big-percent" id="emails"></div>
+						<p>emails sent</p>
+					</div>
+				</div>
+			</div>
+			<div class="fi-container dark center">
+				<div class="big-percent" id="existing"></div>
+				<p id="existing-whole"></p>
+			</div>
+			<div class="slash-container dark-top">
+				<div class="underlay u-top"></div>
+				<div class="fullflex top">
+					<div>
+						<div class="big-percent" id="installed"></div>
+						<p id="installed-number"></p>
+					</div>
+				</div>
+				<div class="fullflex bottom">
+					<div>
+						<p id="downloaded-number"></p>
+						<div class="big-percent left" id="downloaded"></div>
+					</div>
+				</div>
+			</div>
+			<div class="fi-container dark center">
+				<h3>Are they trying? Buying?</h3>
+			</div>
+
+			<div class="fi-container tb-container">
+				<canvas id="trial-buy"></canvas>
+			</div>
+
+			<div class="fi-container plan-container nopad">
+				<div class="canvas-block left">
+					<h3>Trialled</h3>
+					<canvas id="trialled"></canvas>
+				</div>
+				<div class="canvas-block right">
+					<h3>Bought</h3>
+					<canvas id="bought"></canvas>
+				</div>
+			</div>
+
+			<div class="fi-container darker center">
+				<h3>Top 10 Channels</h3>
+			</div>
+
+			<div class="fi-container channels-container padbot">
+				<div class="channels" id="top-ten"></div>
+			</div>
+			
+		</div>
+		<div class="article">
 			<p>The slashes were inspired by a conversation with Steve about how he can never remember how to make triangles from pure CSS while the Charts.js color scheme was taken from one of our <a href="https://beknowntho.com/shop/item/1177308066411997206_2126083097">Beknowntho phone cases</a>.</p>
 			<p>The data shown here is mocked up of course, but in production this brochure pulls live data from redis so it's always updated. It was also pretty fun planning out how the Insync website would talk to our data dashboard (called Radar, perhaps I'll cover that in a future Kata).</p>
-			<p>I'm just a fledgling in the world of design and data but so far I'm finding that I really enjoy this stuff.</p>
+			<p>I'm just a fledgling in the world of design and data but so far I'm finding that I really enjoy this stuff. :)</p>
 		</div>
 	</div>
 	<div class="footer">
