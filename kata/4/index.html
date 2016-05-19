@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kata #4: Data brochure</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="../../common/kata.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/4.css">
+</head>
+<body>
+	<div class="free-insync">
+		<div class="fi-container darker center">
+			<h1>Free Insync Promo May 2016</h1>
+		</div>
+		<div class="fi-container dark center">
+			<div>
+				<div class="big-percent" id="engagement"></div>
+				<p>engagement</p>
+			</div>
+		</div>
+		<div class="slash-container light-top">
+			<div class="underlay u-bottom"></div>
+			<div class="fullflex top">
+				<div>
+					<p id="redeemers-whole"></p>
+					<div class="big-percent left" id="redeemers"></div>
+				</div>
+			</div>
+			<div class="fullflex bottom">
+				<div>
+					<div class="big-percent" id="emails"></div>
+					<p>emails sent</p>
+				</div>
+			</div>
+		</div>
+		<div class="fi-container dark center">
+			<div class="big-percent" id="existing"></div>
+			<p id="existing-whole"></p>
+		</div>
+		<div class="slash-container dark-top">
+			<div class="underlay u-top"></div>
+			<div class="fullflex top">
+				<div>
+					<div class="big-percent" id="installed"></div>
+					<p id="installed-number"></p>
+				</div>
+			</div>
+			<div class="fullflex bottom">
+				<div>
+					<p id="downloaded-number"></p>
+					<div class="big-percent left" id="downloaded"></div>
+				</div>
+			</div>
+		</div>
+		<div class="fi-container dark center">
+			<h3>Are they trying? Buying?</h3>
+		</div>
+
+		<div class="fi-container tb-container">
+			<canvas id="trial-buy"></canvas>
+		</div>
+
+		<div class="fi-container plan-container nopad">
+			<div class="canvas-block left">
+				<h3>Trialled</h3>
+				<canvas id="trialled"></canvas>
+			</div>
+			<div class="canvas-block right">
+				<h3>Bought</h3>
+				<canvas id="bought"></canvas>
+			</div>
+		</div>
+
+		<div class="fi-container darker center">
+			<h3>Top 10 Channels</h3>
+		</div>
+
+		<div class="fi-container channels-container padbot">
+			<div class="channels" id="top-ten"></div>
+		</div>
+		
+	</div>
+	<div class="kata-container centered regular">
+		<div class="header">
+			<h3>2016-5-18</h3>
+			<h1>Kata #4: Data brochure</h1>
+			<p>
+				Prompts: <a href="https://css-tricks.com/snippets/css/css-triangle/">CSS Tricks</a>, <a href="http://www.chartjs.org/">Chart.js</a>
+			</p>
+		</div>
+		<div class="article">
+			<p>So we at <a href="https://insyncq.com">Insync</a> decided to make our app <a href="https://insynchq.com/free">free for 72 hours</a> as an experiment and as a thank you (&#10084;) to our customers. :)</p>
+			<p>It's a given that with experiments like these you really want to track data that may give you insights on how to improve your product, service or business strategy.</p>
+			<p>So I thought if I was to make a report anyway, why not have fun with it? And so this colorful b*tard was born!</p>
+			<p>The slashes were inspired by a conversation with Steve about how he can never remember how to make triangles from pure CSS while the Charts.js color scheme was taken from one of our <a href="https://beknowntho.com/shop/item/1177308066411997206_2126083097">Beknowntho phone cases</a>.</p>
+			<p>The data shown here is mocked up of course, but in production this brochure pulls live data from redis so it's always updated. It was also pretty fun planning out how the Insync website would talk to our data dashboard (called Radar, perhaps I'll cover that in a future Kata).</p>
+			<p>I'm just a fledgling in the world of design and data but so far I'm finding that I really enjoy this stuff.</p>
+		</div>
+	</div>
+	<div class="footer">
+		Back to <a href="http://beatobongco.com/UI-Kata/">UI Kata</a>
+	</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56608851-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
+<script type="text/javascript">
+	Chart.defaults.global.legend.labels.fontColor = "#fff"
+	Chart.defaults.global.legend.labels.fontSize = 18
+	function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
+
+	function setText(s, t) {
+		document.getElementById(s).innerHTML = t
+	}
+
+	function p(t) {
+		return parseInt(freeInsyncData["free_insync:2016-5:" + t]) || 0
+	}
+
+	function getPercent(v1, v2) {
+		return Math.round((p(v1) / p(v2)) * 100) + "%" 
+	}
+
+	function assignDoughnut(canvas_id, data) {
+	  return new Chart(document.getElementById(canvas_id).getContext("2d"), {
+	    type: 'doughnut',
+	    data: data
+	  })
+	}
+
+  var freeInsyncData = {
+		"free_insync:2016-5:sentemails":"100000",
+		"free_insync:2016-5:redeemers":"57400",
+		"free_insync:2016-5:downloaded":"47000",
+		"free_insync:2016-5:installed":"36552",
+		"free_insync:2016-5:redeemers:existing":"25000",
+		"free_insync:2016-5:trialled":"20000",
+		"free_insync:2016-5:trialled:pro":"15000",
+		"free_insync:2016-5:trialled:business":"5000",
+		"free_insync:2016-5:bought":"15000",
+		"free_insync:2016-5:bought:plus":"2500",
+		"free_insync:2016-5:bought:pro":"12000",
+		"free_insync:2016-5:bought:business":"500",
+		"channels":[
+			["www.beatobongco.com",20412],
+			["www.google.com",19234],
+			["www.reddit.com",15235],
+			["www.facebook.com",13562],
+			["www.marksteve.com",11235],
+			["www.youtube.com",8235],
+			["www.insynchq.com",8121],
+			["www.blankhq.com",6234],
+			["www.beknowntho.com",6211],
+			["www.incorgito.com",5001]
+		],
+	}
+  var percentRedeemed = getPercent("redeemers", "sentemails")
+  var existingCustomers = getPercent("redeemers:existing", "redeemers")
+  var percentBought = getPercent("bought", "redeemers")
+  var percentTrialled = getPercent("trialled", "redeemers")
+  var percentDownloaded = getPercent("downloaded", "redeemers")
+  var percentInstalled = getPercent("installed", "redeemers")
+  var channels = freeInsyncData["channels"]
+  //set
+  setText("downloaded-number", numberWithCommas(p("downloaded")) + " downloaded insync")
+  setText("installed-number", numberWithCommas(p("installed")) + " installed insync")
+  setText("engagement", getPercent("redeemers", "sentemails"))
+  setText("emails", numberWithCommas(p("sentemails")))
+  setText('redeemers', numberWithCommas(p("redeemers")))
+  setText('redeemers-whole',  "accounts redeemed")
+  setText('existing', existingCustomers)
+  setText("installed", percentInstalled)
+  setText("downloaded", percentDownloaded)
+  setText('existing-whole', " of redeemers were existing customers (" + numberWithCommas(p("redeemers:existing")) + ")")
+  assignDoughnut("trialled", {
+  	labels: [
+  		"Pro " + getPercent("trialled:pro", "trialled"), 
+  		"Business " + getPercent("trialled:business", "trialled")],
+  	datasets: [
+  		{
+  			data: [p("trialled:pro"), p("trialled:business")],
+  			backgroundColor: ["#8e44ad", "#27ae60"],
+  			borderColor: ["#8e44ad", "#27ae60"],
+  		}
+  	]
+  })
+  assignDoughnut("bought", {
+  	labels: [
+  		"Plus " + getPercent("bought:plus", "bought"), 
+  		"Pro " + getPercent("bought:pro", "bought"), 
+  		"Business " + getPercent("bought:business", "bought")
+  	],
+  	datasets: [
+  		{
+  			data: [p("bought:plus"), p("bought:pro"), p("bought:business")],
+  			backgroundColor: ["#27ae60", "#8e44ad", "#f1c40f"],
+  			borderColor: ["#27ae60", "#8e44ad", "#f1c40f"],
+  		}
+  	]
+  })
+  assignDoughnut("trial-buy", {
+  	labels: [
+  		"Trialled " + percentTrialled, 
+  		"Bought " + percentBought,
+  		"Nothing " + (100 - (parseInt(percentTrialled) + parseInt(percentBought))) + "%" ],
+  	datasets: [
+  		{
+  			data: [p("trialled"), p("bought"), 
+  				p("redeemers") - (p("trialled") + p("bought")) ],
+  			backgroundColor: ["#2ecc71", "#f1c40f", "#9b59b6"],
+  			borderColor: ["#2ecc71", "#f1c40f", "#9b59b6"],
+  		}
+  	]
+  })
+  var channelDOM = "";
+  for (var i = 0; i < channels.length; i++) {
+  	if (i === 10) {
+  		break
+  	}
+  	channelDOM += '<div class="channel"><div class="site">' + 
+  	channels[i][0] + 
+  	'</div><div class="count">' + 
+  	numberWithCommas(channels[i][1]) + '</div></div>'
+  }
+  setText('top-ten', channelDOM) 
+
+  function resizeSlashes() {
+  	var sc = document.querySelector(".slash-container")
+    var top = document.querySelector(".u-top")
+    var bot = document.querySelector(".u-bottom")
+    var newWidth = Math.round(sc.offsetWidth)
+    var newHeight = Math.round(sc.offsetHeight)
+    
+    bot.style.borderLeft = newWidth + "px solid transparent"
+    bot.style.borderBottom = newHeight + "px solid #34495e"
+    top.style.borderRight = newWidth + "px solid transparent"
+    top.style.borderBottom = newHeight + "px solid #ecf0f1"
+  }
+  
+  //responsive slashes
+  resizeSlashes()
+  window.onresize = resizeSlashes
+    
+</script>
+</body>
+</html>
