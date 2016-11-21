@@ -9,6 +9,11 @@ img {
   max-width: 100%;
 }
 
+img.centered {
+  display: block;
+  margin: 0 auto;
+}
+
 .article p {
   font-size: 1.2rem;
 }
@@ -61,4 +66,16 @@ pre {
 
 .kata {
   overflow: auto;
+}
+
+.warning {
+  color: #e74c3c;
+}
+
+.article li {
+  margin-bottom: 10px;
+}
+
+.article h2 {
+  margin-top: 2em;
 }
