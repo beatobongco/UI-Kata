@@ -134,7 +134,7 @@
 
 		<h3>Offline capability</h3>
 
-		<p>I used <a href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers">service workers</a> to cache the app assets. I didn't want dive deep into service workers yet so to make it easy for me I used the <a href="https://github.com/GoogleChrome/sw-precache#command-line-interface">command-line interface of sw-precache</a>.</p>
+		<p>I used <a href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers">service workers</a> to cache the app assets on the user's browser so the page would load even if there's no internet connection. I didn't want dive deep into service workers yet so to make it easy for me I used the <a href="https://github.com/GoogleChrome/sw-precache#command-line-interface">command-line interface of sw-precache</a>.</p>
 
 		<p>I used <a href="https://firebase.google.com/">Firebase</a> to check whether the user is on or offline. When an internet connection is detected, it tries to sync whatever is on the app's <a href="http://www.taffydb.com/">TaffyDB</a> instance with Firebase. It will only sync a non-empty database. Every time a user records a climb or upgrades his pyramid a backup is done. It will also update the TaffyDB instance every time new data is received by Firebase. If you have multiple tabs opened with PeakList running and with the same account logged in, you can record a route and you'll see all the tabs update. I think that's pretty rad. </p>
 
