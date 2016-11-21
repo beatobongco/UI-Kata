@@ -86,9 +86,11 @@
 
 		<p><i class="warning"><b>Warning!</b></i> This section can get a little technical with climbing terms and such. I'll try my best to word it for a general audience.</p>
 
-		<p>I first got the idea for PeakList while reading some books on climbing, namely <a href="https://www.amazon.com/Performance-Rock-Climbing-Dale-Goddard/dp/0811722198">Performance Rock Climbing</a> and <a href="https://www.amazon.com/Self-Coached-Climber-Movement-Training-Performance/dp/0811733394">Self-Coached Climber</a>.</p>
+		<p>I first got the idea for PeakList while reading some books on climbing which taught me the concepts below.</p>
 
-		<p>While reading Self-Coached Climber I came across the concept of the route pyramid. The book says that well rounded climbers have strong bases of lower graded routes, uniformly thinning up to the highest grade they can reach, thus the pyramid structure. Making a route pyramid is easy. You just have to know your onsight grade - a grade you are confident you can finish on your first try. Let's say that's 6a+.</p>
+		<h3>Route pyramid</h3>
+
+		<p>While reading <a href="https://www.amazon.com/Self-Coached-Climber-Movement-Training-Performance/dp/0811733394">Self-Coached Climber</a> I came across the concept of the route pyramid. The book says that well rounded climbers have strong bases of lower graded routes, uniformly thinning up to the highest grade they can reach, thus the pyramid structure. Making a route pyramid is easy. You just have to know your onsight grade - a grade you are confident you can finish on your first try. Let's say that's 6a+.</p>
 
 		<img class="centered" src="image/5_pyramid.png">
 
@@ -98,33 +100,47 @@
 
 		<p>It's possible your pyramid will look lopsided if you logged many climbs of a grade level. Your aim should be to fix these imbalances.</p>
 
-		<p>As for the rest of the stats displayed at the bottom, I was inspired by the Performance Rock Climbing. Out of everything said on the book, one concept really stuck with me: the analogy of the rusty car. </p>
+		<h3>Weakness finder</h3>
+
+		<p>I call the rest of the stats displayed at the bottom the "weakness finder". I was inspired by <a href="https://www.amazon.com/Performance-Rock-Climbing-Dale-Goddard/dp/0811722198">Performance Rock Climbing</a>. Out of everything said on the book, one concept really stuck with me: the analogy of the rusty car. </p>
+
+		<img class="centered" src="image/rusty.jpg">
 
 		<p>It goes something like this: you have an old car that you fix up and bring to the race track. Since your car wont go faster than twenty miles an hour you start work on improving the engine. You work hard and eventually, your car can reach a higher top speed. You are happy. You keep working hard and your car's top speed keeps on increasing.</p>
 
 		<p>After a while though you notice that when your car reaches its top speed, turning becomes difficult and your car begins to wobble. Also, you notice that it becomes harder and harder to increase the top speed of you car even if you've been putting more work in the engine. How do you increase your car's performance? You've become good at working the engine but if you keep doing the same thing you'll be stuck in a plateau.</p>
 
-		<p>The answer is you work on the steering. This is called the Weakest Link principle. The quickest gains comes from working on what you're bad at. That is the philosophy behind PeakList. It helps you improve your climbing by showing you the "holes in your game". If you notice big dips graph, strive to climb more routes of that type.</p>
+		<p>The answer is you work on the steering. This is called the Weakest Link principle. The quickest gains in performance comes from working on what you're bad at. That is the philosophy behind PeakList. It helps you improve your climbing by showing you the "holes in your game". If you notice big dips graph, strive to climb more routes of that type.</p>
 
 		<img class="centered" src="image/6_stats.png">
 
 		<p>For example in my stats I don't have much experience with heavily overhung or roof routes. I need to climb on that angle more. I could also benefit from climbing routes with tiny jibs, monos and pinches.</p>
 
-		<h2>Code section</h2>
+		<h2>Notes on coding and design</h2>
 
-		<p>I used <a href="https://vuejs.org/">Vue.js</a> for this project. It's a simple but powerful library that helps me render components on the page based on the user's data. I've used it in the past to build my smart playlist <a href="../5/">Psyche.TV</a> and I loved it.</p>
+		<p>The interesting thing about PeakList is it's all client-side and it's just hosted on GitHub Pages. Deploying is literally as easy as copy-paste.</p>
+
+		<h3>View library</h3>
+
+		<p>I used <a href="https://vuejs.org/">Vue.js</a> for this project. It's a simple but powerful library that helps me render components on the page based on the user's data. I've used it in the past to build my smart playlist <a href="../5/">Psyche.TV</a> and I loved using it.</p>
 
 		<h3>Design</h3>
 
-		<p>I loved the concept of <a href="http://kumailht.com/gridforms/">Gridforms</a> so much I decided to base the app's design on it. I went for a minimalist, mobile-first design.</p>
+		<p>I liked the concept of <a href="http://kumailht.com/gridforms/">Gridforms</a> so much I decided to base the app's design on it. I went for a minimalist, mobile-first design.</p>
 
-		<p>I use PeakList in the gym so I wanted it as straightforward as possible: everything I need on the screen right off the bat. I didn't want any navigation elements that would interfere with the experience. While I'm climbing I just want to be ready to log my climbs. When resting, I just want to conveniently scroll down to see my stats to get an idea of what routes I should be working on.</p>
+		<p>I use PeakList in the <a href="https://www.facebook.com/climbcentralmanila/">gym</a> so I wanted it as straightforward as possible: everything I need on the screen right off the bat. I didn't want any navigation elements that would interfere with the experience. While I'm climbing I just want to be ready to log my climbs. When resting, I just want to conveniently scroll down to see my stats to get an idea of what routes I should be working on.</p>
 
 		<p>The pretty charts are from <a href="http://www.chartjs.org/">Chart.js</a>.</p>
 
 		<h3>Offline capability</h3>
 
-		<p>I used <a href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers">service workers</a>. I didn't want dive deep into service workers yet so to make it easy for me I used the <a href="https://github.com/GoogleChrome/sw-precache#command-line-interface">command-line interface of sw-precache</a>.</p>
+		<p>I used <a href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers">service workers</a> to cache the app assets. I didn't want dive deep into service workers yet so to make it easy for me I used the <a href="https://github.com/GoogleChrome/sw-precache#command-line-interface">command-line interface of sw-precache</a>.</p>
+
+		<p>I used <a href="https://firebase.google.com/">Firebase</a> to check whether the user is on or offline. When an internet connection is detected, it tries to sync whatever is on the app's <a href="http://www.taffydb.com/">TaffyDB</a> instance with Firebase. It will only sync a non-empty database. Every time a user records a climb or upgrades his pyramid a backup is done. It will also update the TaffyDB instance every time new data is received by Firebase. If you have multiple tabs opened with PeakList running and with the same account logged in, you can record a route and you'll see all the tabs update. I think that's pretty rad. </p>
+
+		<h3>Github</h3>
+
+		<p>I've open sourced PeakList on github! Check it out <a href="https://github.com/beatobongco/PeakList">here</a>.</p>
 	</div>
 	<div class="footer">
 		Back to <a href="https://beatobongco.com/UI-Kata/">UI Kata</a>
@@ -137,30 +153,6 @@
 
   ga('create', 'UA-56608851-1', 'auto');
   ga('send', 'pageview');
-</script>
-<script type="text/javascript">
-	var nodes = document.querySelectorAll(".cleanrich-card")
-	for (var i = 0; i < nodes.length; i++) {
-		var n = nodes[i].querySelector('.moverlink')
-		var imgNode = nodes[i].querySelector("img")
-
-		if (!n) {
-			continue
-		}
-
-		n.onmouseout = function(imgNode, e) {
-			imgNode.src = imgNode.getAttribute('data-still')
-		}.bind(this, imgNode)
-
-		n.onmouseover = function(imgNode) {
-			if (imgNode.src !== imgNode.getAttribute('data-moving')) {
-				imgNode.src = imgNode.getAttribute('data-moving')
-			}
-		}.bind(this, imgNode)
-	}
-	document.querySelector(".cleanrich-card.special").onmouseout = function() {
-		console.log(Math.random())
-	}
 </script>
 </body>
 </html>
