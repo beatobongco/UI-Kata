@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kata #6: PeakList</title>
+	<meta property="og:image" content="https://beatobongco.com/UI-Kata/index-assets/kaizen.png" />
+  <meta property="og:description" content="Climbing and code are two of my passions so I thought of a way to combine them: I made a climbing stats tracker!" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+	<link rel="stylesheet" type="text/css" href="../../common/kata.css">
+	<link href='https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="kata-container centered regular">
+	<div class="header">
+		<h3>2016-11-21</h3>
+		<h1>Kata #6: PeakList</h1>
+		<p>
+			Prompt: Climbing books
+		</p>
+	</div>
+
+	<div class="article">
+		<img class="centered" src="image/logo.png">
+		<h2>What is PeakList?</h2>
+
+		<p>PeakList is a climbing stats tracker and toy project of mine. Whenever you finish a route, just log it in PeakList and you'll be shown some useful charts and graphs that help you improve and diagnose the problems in your climbing. If you use it while its offline it will sync routes you log when you next go online.</p>
+
+		<p>Check it out at <a href="https://beatobongco.com/PeakList/">https://beatobongco.com/PeakList/</a> or just proceed to the walkthrough section.</p>
+
+		<p><i><b class="warning">Warning!</b></i> It's still in development. The main functions should work well but you may encounter some issues with offline capabilities and syncing.</p>
+
+		<h2>Walkthrough</h2>
+
+		<p>This section will go though each of the app's screens and features so you don't have to.</p>
+
+		<img class="centered" src="image/1_landing.png">
+
+		<p>This is the first screen you see, a simple login/signup landing page. Since we don't have an account, let's <b>sign up</b> first.</p>
+
+		<img class="centered" src="image/2_onboarding.png">
+
+		<p>You'll be greeted by a basic signup form. Don't worry about inputting your email. There's no email verification and I don't use your email for anything. Promise!</p>
+
+		<p>Here you can choose your grading system (French or Yosemite Decimal) and <a href="https://en.wikipedia.org/wiki/Glossary_of_climbing_terms#on_sight">on-sight</a> grade for both roped climbing and bouldering.</p>
+
+		<p>Let's press <b>"Sign up"</b> to confirm our details.</p>
+
+		<img class="centered" src="image/3_route.png">
+
+		<p>After that you can start logging routes. You're required to input the name of the route, grade, work (redpoint, flash, on-sight), whether it was indoor or outdoor, and top rope or lead. You can also switch between logging roped climbing and boulders on the top left corner.</p>
+
+		<p>Scrolling down, you also have optional characteristics:</p>
+
+		<img class="centered" src="image/4_optional.png">
+
+		<ul>
+			<li><b>Hold type</b> - prominent types of holds in the route. Was it full of jugs, crimps, slopers, etc?</li>
+			<li><b>Length</b> - length of the route. Short, medium, long. I haven't decided on actual numerical definitions for these yet.</li>
+			<li><b>Crux location</b> - where the hardest moves of the route lie. Beginning, middle, or end?</li>
+			<li><b>Angle</b> - prominent angle of the route. Was it a slab or steep overhang? This one is a bit more specific with angles specified. e.g. Moderate overhangs are between 30-35 degrees. </li>
+			<li><b>Technique</b> - climbing technique you noticed was very important while climbing the route. This is subjective. It could be the technique you used multiple times on the route or the technique you learned because of the route.</li>
+			<li><b>Comments</b> - a text input for any personal notes you have about the route</li>
+		</ul>
+
+		<p>And you can hit <b>"Record"</b> to log your climb.</p>
+
+		<p>Scroll down and you should see a route pyramid. It's a useful tool to for climbing progression. I explain more about it in the <a href="#climbing-concepts">climbing concepts</a> section.</p>
+
+		<img class="centered" src="image/5_pyramid.png">
+
+		<p>Because our new account doesn't have data yet the pyramid should be blank. Below that you have some useful charts and graphs related to the climbing data you've entered. I'll use the data I've logged from this point on just to show you how it looks.</p>
+
+		<img class="centered" src="image/5_my_pyramid.png">
+
+		<img class="centered" src="image/6_stats.png">
+
+		<p>You can filter the data that diplays by grade.</p>
+
+		<img class="centered" src="image/7_stats.png">
+
+		<p>You also have a list of routes you've climbed at the bottom. One of my to-do's is to make them display their characteristics when clicked.</p>
+
+		<p>And there you have it! That's the PeakList app in a nutshell.</p>
+
+		<h2 id="climbing-concepts">Climbing concepts</h2>
+
+		<p><i class="warning"><b>Warning!</b></i> This section can get a little technical with climbing terms and such. I'll try my best to word it for a general audience.</p>
+
+		<p>I first got the idea for PeakList while reading some books on climbing, namely <a href="https://www.amazon.com/Performance-Rock-Climbing-Dale-Goddard/dp/0811722198">Performance Rock Climbing</a> and <a href="https://www.amazon.com/Self-Coached-Climber-Movement-Training-Performance/dp/0811733394">Self-Coached Climber</a>.</p>
+
+		<p>While reading Self-Coached Climber I came across the concept of the route pyramid. The book says that well rounded climbers have strong bases of lower graded routes, uniformly thinning up to the highest grade they can reach, thus the pyramid structure. Making a route pyramid is easy. You just have to know your onsight grade - a grade you are confident you can finish on your first try. Let's say that's 6a+.</p>
+
+		<img class="centered" src="image/5_pyramid.png">
+
+		<p>You start with a pyramid divided into four parts. The tip is your onsight grade + 4, the second is onsight grade + 3, the third is +2, the base is +1. You must complete 1 route of the grade on the tip, 2 on the second, 4 on the third and 8 routes on the base. </p>
+
+		<p>Once you've filled up the whole thing, your pyramid is upgraded one level. All rungs are increased by 1 grade level and the base is discarded. Your old climbs still count. This is what a freshly upgraded pyramid looks like provided you exactly completed the above requirements, no more no less.</p>
+
+		<p>It's possible your pyramid will look lopsided if you logged many climbs of a grade level. Your aim should be to fix these imbalances.</p>
+
+		<p>As for the rest of the stats displayed at the bottom, I was inspired by the Performance Rock Climbing. Out of everything said on the book, one concept really stuck with me: the analogy of the rusty car. </p>
+
+		<p>It goes something like this: you have an old car that you fix up and bring to the race track. Since your car wont go faster than twenty miles an hour you start work on improving the engine. You work hard and eventually, your car can reach a higher top speed. You are happy. You keep working hard and your car's top speed keeps on increasing.</p>
+
+		<p>After a while though you notice that when your car reaches its top speed, turning becomes difficult and your car begins to wobble. Also, you notice that it becomes harder and harder to increase the top speed of you car even if you've been putting more work in the engine. How do you increase your car's performance? You've become good at working the engine but if you keep doing the same thing you'll be stuck in a plateau.</p>
+
+		<p>The answer is you work on the steering. This is called the Weakest Link principle. The quickest gains comes from working on what you're bad at. That is the philosophy behind PeakList. It helps you improve your climbing by showing you the "holes in your game". If you notice big dips graph, strive to climb more routes of that type.</p>
+
+		<img class="centered" src="image/6_stats.png">
+
+		<p>For example in my stats I don't have much experience with heavily overhung or roof routes. I need to climb on that angle more. I could also benefit from climbing routes with tiny jibs, monos and pinches.</p>
+
+		<h2>Code section</h2>
+
+		<p>I used <a href="https://vuejs.org/">Vue.js</a> for this project. It's a simple but powerful library that helps me render components on the page based on the user's data. I've used it in the past to build my smart playlist <a href="../5/">Psyche.TV</a> and I loved it.</p>
+
+		<h3>Design</h3>
+
+		<p>I loved the concept of <a href="http://kumailht.com/gridforms/">Gridforms</a> so much I decided to base the app's design on it. I went for a minimalist, mobile-first design.</p>
+
+		<p>I use PeakList in the gym so I wanted it as straightforward as possible: everything I need on the screen right off the bat. I didn't want any navigation elements that would interfere with the experience. While I'm climbing I just want to be ready to log my climbs. When resting, I just want to conveniently scroll down to see my stats to get an idea of what routes I should be working on.</p>
+
+		<p>The pretty charts are from <a href="http://www.chartjs.org/">Chart.js</a>.</p>
+
+		<h3>Offline capability</h3>
+
+		<p>I used <a href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers">service workers</a>. I didn't want dive deep into service workers yet so to make it easy for me I used the <a href="https://github.com/GoogleChrome/sw-precache#command-line-interface">command-line interface of sw-precache</a>.</p>
+	</div>
+	<div class="footer">
+		Back to <a href="https://beatobongco.com/UI-Kata/">UI Kata</a>
+	</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56608851-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+	var nodes = document.querySelectorAll(".cleanrich-card")
+	for (var i = 0; i < nodes.length; i++) {
+		var n = nodes[i].querySelector('.moverlink')
+		var imgNode = nodes[i].querySelector("img")
+
+		if (!n) {
+			continue
+		}
+
+		n.onmouseout = function(imgNode, e) {
+			imgNode.src = imgNode.getAttribute('data-still')
+		}.bind(this, imgNode)
+
+		n.onmouseover = function(imgNode) {
+			if (imgNode.src !== imgNode.getAttribute('data-moving')) {
+				imgNode.src = imgNode.getAttribute('data-moving')
+			}
+		}.bind(this, imgNode)
+	}
+	document.querySelector(".cleanrich-card.special").onmouseout = function() {
+		console.log(Math.random())
+	}
+</script>
+</body>
+</html>
