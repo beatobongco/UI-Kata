@@ -63,7 +63,9 @@ code {
   font-size: 0.8rem;
 }
 
-.footer a {
+.footer a,
+.footer a:visited {
+  color: #e74c3c;
   text-transform: uppercase;
   text-decoration: none;
 }
