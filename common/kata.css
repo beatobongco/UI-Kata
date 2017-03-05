@@ -75,7 +75,8 @@ code {
   margin: 0;
 }
 
-.kata-container a {
+.kata-container a,
+.kata-container a:visited {
   color: #e74c3c;
   text-decoration: none;
 }
