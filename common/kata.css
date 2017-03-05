@@ -1,3 +1,20 @@
+a {
+  cursor: pointer;
+}
+
+.linkback-container {
+  font-family: 'Sorts Mill Goudy', serif;
+  font-weight: 500;
+  background-color: #e74c3c;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.linkback-container a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .header,
 .article,
 .footer {
@@ -36,7 +53,6 @@ code {
 
 .kata-container.regular {
   max-width: 700px;
-  margin-top: 25px;
   padding: 0 5%;
 }
 
