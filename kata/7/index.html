@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kata #7: reddaily</title>
+	<meta property="og:image" content="https://beatobongco.com/UI-Kata/index-assets/kaizen.png" />
+  <meta property="og:description" content="reddaily is a client-side reddit aggregator. It's designed to give you your daily dose of reddit with less of the distraction." />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+	<link rel="stylesheet" type="text/css" href="../../common/kata.css">
+	<link href='https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="kata-container centered regular">
+	<div class="header">
+		<h3>2017-3-5</h3>
+		<h1>Kata #7: reddaily</h1>
+		<p>
+			Prompt: <a href="https://www.reddit.com/">reddit</a>, <a href="http://www.daemonology.net/hn-daily/">Hacker News Daily</a>
+		</p>
+	</div>
+
+	<div class="article">
+		<h2>What is reddaily?</h2>
+
+		<p>reddaily is a client-side reddit aggregator. It's designed to give you your daily dose of reddit with less of the distraction.</p>
+
+		<p>Give it a try here: <a href="https://beatobongco.com/reddaily/">https://beatobongco.com/reddaily/</a></p>
+
+		<img class="centered" src="image/web.png">
+
+		<p>Of course, as I <span style="color: tomato">&hearts;</span> responsive design, it looks good on mobile.</p>
+
+		<img class="centered" src="image/mobile.png">
+
+		<h2>Why?</h2>
+
+		<p>I browse reddit often.</p>
+
+		<p>Sometimes it contains interesting, mind-expanding articles and discussions relevant to my field. Oftentimes, it does not and results in an entertaining but ultimately time-wasting undertaking.</p>
+
+		<p>I decided one day that I would like the positive things reddit gives me without having to waste time on the negatives so I observed my own behavior for a while.</p>
+
+		<p>I noticed these things:</p>
+
+		<ul>
+			<li>I don't normally post or comment on reddit.</li>
+			<li>I usually visit only certain subreddits.</li>
+			<li>I sort almost every subreddit by "top".</li>
+			<li>The posts that usually had a positive impact on my life were those with many upvotes.</li>
+			<li>I sometimes get sidetracked by content that's entertaining but not entirely of good quality.</li>
+		</ul>
+
+		<p>I knew right off the bat that making an <a href="https://en.wikipedia.org/wiki/Aggregator">aggregator</a> was the answer. I'm a big fan of <a href="http://www.daemonology.net/hn-daily/">Colin Percival's Hacker News Daily</a>. I wanted something like that.</p>
+
+		<p>I also wanted it to be completely client-side because that's my shtick (and so I don't have to pay to run a server).</p>
+
+		<h2>Making reddaily</h2>
+
+		<p>Reddaily is extremely simple. You can take a look at it <a href="https://github.com/beatobongco/reddaily">here</a>. It just uses reddit's public JSON API which can be accessed by basically adding <i>.json</i> to any reddit URL.</p>
+
+		<p>e.g.</p>
+
+		<code>https://www.reddit.com/r/climbing -> https://www.reddit.com/r/climbing.json</code>
+
+		<p>Then I just use <a href="https://github.com/visionmedia/superagent">superagent</a> to pull the data and <a href="https://github.com/vuejs/vue">Vue</a> to display. The list of subreddits can be set in a <a href="https://github.com/beatobongco/reddaily/blob/master/settings.js">settings file</a>.</p>
+
+		<h2>Results of usage</h2>
+
+		<p>When I made this on October of last year, I was using it daily as designed on both my laptop and phone. Prior to reddaily I was browsing reddit for around 2 hours a day. </p>
+
+		<p>reddaily weaned me off browsing the actual website by scratching the itch of knowing what's new but reducing potential distraction by acting as a middleman/curator who hides and sorts posts for me and only gives me more links when I specifically request for them. </p>
+
+		<p>It's design also helped as I made the link to the comments section non-prominent by reducing it's font size and choosing a font color that wasn't very good for readability. It's still there when I need it but it doesn't call out to be clicked.</p>
+
+		<p>What eventually happened was that I quit reddit almost completely. Most days I just take a quick glance at reddaily and if nothing piques my interest then I never end up on reddit at all. Mission accomplished. Not bad for a day's work! :)</p>
+
+	</div>
+	<div class="footer">
+		Back to <a href="https://beatobongco.com/UI-Kata/">UI Kata</a>
+	</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56608851-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
