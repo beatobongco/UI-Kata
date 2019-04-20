@@ -1,129 +1,204 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>UI Kata - beatobongco.com</title>
+    <meta property="og:title" content="UI Kata" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://beatobongco.com/UI-Kata/" />
+    <meta
+      property="og:image"
+      content="https://beatobongco.com/UI-Kata/index-assets/og.png"
+    />
+    <meta
+      property="og:description"
+      content="A sorta-blog containing tiny UI projects I work on to keep the mind sharp."
+    />
+    <meta
+      name="description"
+      content="A sorta-blog containing tiny UI projects I work on to keep the mind sharp."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" type="text/css" href="index-assets/index.css" />
+    <script>
+      (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        (i[r] =
+          i[r] ||
+          function() {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        'script',
+        '//www.google-analytics.com/analytics.js',
+        'ga'
+      );
 
-<head>
-  <title>UI Kata - beatobongco.com</title>
-  <meta property="og:title" content="UI Kata" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://beatobongco.com/UI-Kata/" />
-  <meta property="og:image" content="https://beatobongco.com/UI-Kata/index-assets/og.png" />
-  <meta property="og:description" content="A sorta-blog containing tiny UI projects I work on to keep the mind sharp." />
-  <meta name="description" content="A sorta-blog containing tiny UI projects I work on to keep the mind sharp.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
-  <link href='https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="index-assets/index.css">
-  <script>
-    (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-56608851-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
 
-    ga('create', 'UA-56608851-1', 'auto');
-    ga('send', 'pageview');
-  </script>
-</head>
-
-<body>
-  <div class="body-wrap">
-    <div class="header">
-      <h1>UI Kata</h1>
-      <p>Tiny UI experiments of mine inspired by life and work.</p>
-      <p>I take something that interests me (a website, UI component, real life thing) as a "prompt" to create stuff or
-        remix it to learn something new.</p>
-      <p>Welcome to my dojo.</p>
+  <body>
+    <div class="body-wrap">
+      <div class="header">
+        <h1>UI Kata</h1>
+        <p>Tiny UI experiments of mine inspired by life and work.</p>
+        <p>
+          I take something that interests me (a website, UI component, real life
+          thing) as a "prompt" to create stuff or remix it to learn something
+          new.
+        </p>
+        <p>Welcome to my dojo.</p>
+      </div>
+      <div class="kata-container">
+        <div class="kata">
+          <p class="date">2019-04-20</p>
+          <a class="title" href="https://beatobongco.com/lightcycles/"
+            >#16: lightcycles</a
+          >
+          <p class="description">
+            Classic Tron game with some tweaks for 1-2 players in two.js.
+          </p>
+        </div>
+        <div class="kata">
+          <p class="date">2019-02-04</p>
+          <a class="title" href="https://beatobongco.com/copycat.js/"
+            >#15: copycat.js</a
+          >
+          <p class="description">
+            Make DOM elements copy properties of objects in 1 KB!
+          </p>
+        </div>
+        <div class="kata">
+          <p class="date">2018-10-31</p>
+          <a class="title" href="https://beatobongco.com/react-router-demo/"
+            >#14: Corgi Machine</a
+          >
+          <p class="description">
+            Trying out
+            <a href="https://github.com/ReactTraining/react-router"
+              >React Router v4</a
+            >
+            with corgis! :)
+          </p>
+        </div>
+        <div class="kata">
+          <p class="date">2018-8-20</p>
+          <a class="title" href="https://beatobongco.com/sentinel/"
+            >#13: Sentinel</a
+          >
+          <p class="description">
+            Proof of concept quick facial recognition system completely in the
+            browser.
+          </p>
+        </div>
+        <div class="kata">
+          <p class="date">2018-7-3</p>
+          <a class="title" href="https://beatobongco.com/handy/"
+            >#12: Handy: Handwritten Digits AI</a
+          >
+          <p class="description">
+            An AI that can recognize your crappy handwritten digits. Made in
+            keras and tensorflow.js.
+          </p>
+        </div>
+        <div class="kata">
+          <p class="date">2017-7-10</p>
+          <a class="title" href="./kata/11/">#11: Throwback: Detective Dodge</a>
+          <p class="description">
+            A fun little flash game I made way back in college. Use WASD keys to
+            dodge bullets!
+          </p>
+        </div>
+        <div class="kata">
+          <p class="date">2017-6-3</p>
+          <a class="title" href="https://beatobongco.com/TIL/presentations/"
+            >#10: Cleaver Presentations</a
+          >
+          <p class="description">
+            An online collection of simple presentations made with Cleaver.
+          </p>
+        </div>
+        <div class="kata">
+          <p class="date">2017-4-26</p>
+          <a class="title" href="https://beatobongco.com/DeorroGameOfLife/"
+            >#9: Deorro's Game of Life</a
+          >
+          <p class="description">
+            Music video using code. An audio-visualization that interacts with
+            Conway's Game of Life.
+          </p>
+        </div>
+        <div class="kata">
+          <p class="date">2017-4-26</p>
+          <a class="title" href="https://beatobongco.com/book-highlights/"
+            >#8: Book highlights and notes</a
+          >
+          <p class="description">Exported Kindle notebooks styled in JS.</p>
+        </div>
+        <div class="kata">
+          <p class="date">2017-3-5</p>
+          <a class="title" href="./kata/7/">#7: reddaily</a>
+          <p class="description">
+            Distraction-free, client-side reddit aggregator.
+          </p>
+        </div>
+        <div class="kata">
+          <p class="date">2016-11-21</p>
+          <a class="title" href="./kata/6/">#6: PeakList</a>
+          <p class="description">Climbing stats tracker and route pyramid.</p>
+        </div>
+        <div class="kata">
+          <p class="date">2016-6-27</p>
+          <a class="title" href="./kata/5/">#5: Psyche.TV</a>
+          <p class="description">Smart playlist for climbing videos.</p>
+        </div>
+        <div class="kata">
+          <p class="date">2016-5-19</p>
+          <a class="title" href="./kata/4/">#4: Insync data brochure</a>
+        </div>
+        <div class="kata">
+          <p class="date">2016-5-11</p>
+          <a class="title" href="./kata/3/">#3: Flinto banners</a>
+        </div>
+        <div class="kata">
+          <p class="date">2016-5-10</p>
+          <a class="title" href="./kata/2/">#2: HTML5 video background</a>
+        </div>
+        <div class="kata">
+          <p class="date">2016-5-9</p>
+          <a class="title" href="./kata/1/">#1: Clean + rich card</a>
+        </div>
+        <div class="kata">
+          <p class="date">2016-5-9</p>
+          <a class="title" href="./">#0: UI Kata homepage</a>
+        </div>
+        <div class="kata">
+          <p class="date">2016-5-9</p>
+          <a class="title" href="./kata-template">Kata template</a>
+        </div>
+      </div>
+      <div class="footer">
+        Made with wonder by <a href="https://beatobongco.com">Beato Bongco</a> |
+        Prompted by <a href="http://rubykoans.com">Ruby Koans</a>
+      </div>
     </div>
-    <div class="kata-container">
-      <div class="kata">
-        <p class="date">2019-02-04</p>
-        <a class="title" href="https://beatobongco.com/copycat.js/">#15: copycat.js</a>
-        <p class="description">Make DOM elements copy properties of objects in 1 KB!</p>
-      </div>
-      <div class="kata">
-        <p class="date">2018-10-31</p>
-        <a class="title" href="https://beatobongco.com/react-router-demo/">#14: Corgi Machine</a>
-        <p class="description">Trying out <a href="https://github.com/ReactTraining/react-router">React Router v4</a>
-          with corgis! :)</p>
-      </div>
-      <div class="kata">
-        <p class="date">2018-8-20</p>
-        <a class="title" href="https://beatobongco.com/sentinel/">#13: Sentinel</a>
-        <p class="description">Proof of concept quick facial recognition system completely in the browser.</p>
-      </div>
-      <div class="kata">
-        <p class="date">2018-7-3</p>
-        <a class="title" href="https://beatobongco.com/handy/">#12: Handy: Handwritten Digits AI</a>
-        <p class="description">An AI that can recognize your crappy handwritten digits. Made in keras and
-          tensorflow.js.</p>
-      </div>
-      <div class="kata">
-        <p class="date">2017-7-10</p>
-        <a class="title" href="./kata/11/">#11: Throwback: Detective Dodge</a>
-        <p class="description">A fun little flash game I made way back in college. Use WASD keys to dodge bullets!</p>
-      </div>
-      <div class="kata">
-        <p class="date">2017-6-3</p>
-        <a class="title" href="https://beatobongco.com/TIL/presentations/">#10: Cleaver Presentations</a>
-        <p class="description">An online collection of simple presentations made with Cleaver.</p>
-      </div>
-      <div class="kata">
-        <p class="date">2017-4-26</p>
-        <a class="title" href="https://beatobongco.com/DeorroGameOfLife/">#9: Deorro's Game of Life</a>
-        <p class="description">Music video using code. An audio-visualization that interacts with Conway's Game of
-          Life.</p>
-      </div>
-      <div class="kata">
-        <p class="date">2017-4-26</p>
-        <a class="title" href="https://beatobongco.com/book-highlights/">#8: Book highlights and notes</a>
-        <p class="description">Exported Kindle notebooks styled in JS.</p>
-      </div>
-      <div class="kata">
-        <p class="date">2017-3-5</p>
-        <a class="title" href="./kata/7/">#7: reddaily</a>
-        <p class="description">Distraction-free, client-side reddit aggregator.</p>
-      </div>
-      <div class="kata">
-        <p class="date">2016-11-21</p>
-        <a class="title" href="./kata/6/">#6: PeakList</a>
-        <p class="description">Climbing stats tracker and route pyramid.</p>
-      </div>
-      <div class="kata">
-        <p class="date">2016-6-27</p>
-        <a class="title" href="./kata/5/">#5: Psyche.TV</a>
-        <p class="description">Smart playlist for climbing videos.</p>
-      </div>
-      <div class="kata">
-        <p class="date">2016-5-19</p>
-        <a class="title" href="./kata/4/">#4: Insync data brochure</a>
-      </div>
-      <div class="kata">
-        <p class="date">2016-5-11</p>
-        <a class="title" href="./kata/3/">#3: Flinto banners</a>
-      </div>
-      <div class="kata">
-        <p class="date">2016-5-10</p>
-        <a class="title" href="./kata/2/">#2: HTML5 video background</a>
-      </div>
-      <div class="kata">
-        <p class="date">2016-5-9</p>
-        <a class="title" href="./kata/1/">#1: Clean + rich card</a>
-      </div>
-      <div class="kata">
-        <p class="date">2016-5-9</p>
-        <a class="title" href="./">#0: UI Kata homepage</a>
-      </div>
-      <div class="kata">
-        <p class="date">2016-5-9</p>
-        <a class="title" href="./kata-template">Kata template</a>
-      </div>
-    </div>
-    <div class="footer">
-      Made with wonder by <a href="https://beatobongco.com">Beato Bongco</a> | Prompted by <a href="http://rubykoans.com">Ruby
-        Koans</a>
-    </div>
-  </div>
-</body>
-
+  </body>
 </html>
